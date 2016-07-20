@@ -1,0 +1,1 @@
+AND ISNULL(EMAIL, '') LIKE '_%@_%._%' --דוא"ל תקני

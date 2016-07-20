@@ -1,0 +1,2 @@
+SELECT @@servername
+

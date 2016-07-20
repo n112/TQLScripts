@@ -1,0 +1,9 @@
+SELECT 
+  dbs.NAME, 
+  CAST((SUM(mFiles.SIZE) * 8 / 1024.00 / 1024.00) AS NUMERIC(18,2)) 
+      AS [DB SIZE (In GB)]
+FROM
+   SYS.MASTER_FILES mFiles INNER JOIN SYS.DATABASES dbs
+      ON dbs.DATABASE_ID = mFiles.DATABASE_ID
+WHERE dbs.DATABASE_ID > 4 
+group by dbs.NAME
